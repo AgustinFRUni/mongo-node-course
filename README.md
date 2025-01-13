@@ -23,6 +23,7 @@ This API provides functionalities to manage a library system. It includes endpoi
 - MongoDb
 - Mongoose
 - JsonWebToken
+- Bcrypt
 
 
 ## Project Structure
