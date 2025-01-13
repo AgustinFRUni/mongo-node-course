@@ -103,8 +103,8 @@ export const getBookStats = async (req, res) => {
         $project: {
           _id: 0,
           category: '$_id',
-          averagePrice: 1,
-          averagePages: 1,
+          averagePrice: { $round: ["$averagePrice", 2] },
+          averagePages: { $round: ["$averagePages", 2] },
           bookCount: 1
         }
       }
