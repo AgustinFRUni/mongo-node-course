@@ -6,11 +6,11 @@
 1. [Introduction](#introduction)
 2. [Technologies Used](#techs)
 3. [Project Structure](#project-structure)
-4. [API Endpoints](#api-endpoints)
+4. [Installation](#installation)
+5. [API Endpoints](#api-endpoints)
    - [Authentication](#authentication)
+   - [Using JSON Web Tokens](#using-json-web-tokens)
    - [Books](#books)
-5. [Using JSON Web Tokens](#using-json-web-tokens)
-6. [Installation](#installation)
 
 ## Introduction
 
@@ -83,7 +83,7 @@ Authenticate a user and return a token.
   "password": "pass"
 }
 ```
-## Using JSON Web Tokens
+### Using JSON Web Tokens
 
 This API uses JSON Web Tokens (JWT) for authentication. To access protected routes, include a valid JWT in the Authorization header of your requests.
 
