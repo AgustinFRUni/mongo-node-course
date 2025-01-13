@@ -51,7 +51,7 @@ To install the project, run:
 
 ```
 git clone https://github.com/AgustinFRUni/node-js-course.git
-cd node-js-course
+cd mongo-node-course
 npm install
 ```
 
