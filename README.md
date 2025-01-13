@@ -1,4 +1,4 @@
-# Node-js-course 
+# Mongo-node-course 
 # Biblioteca API 📖
 
 ## Table of Contents
