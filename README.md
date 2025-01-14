@@ -31,6 +31,7 @@ This API provides functionalities to manage a library system. It includes endpoi
 - Mongoose
 - JsonWebToken
 - Bcrypt
+- Cors
 
 ### Installation
 
