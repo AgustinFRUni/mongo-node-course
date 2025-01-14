@@ -1,19 +1,18 @@
 import { useState } from "react"
 
-const BookForm = ({ onSubmit }) => {
+const BookUpdateForm = ({ book, onSubmit }) => {
   const initialFormData = {
-    title: "",
-    isbn: "",
-    category: "",
-    price: "",
-    pages: "",
-    authorName: "",
-    yearOfRelease: "",
-    sinopsis: ""
+    title: book.title,
+    isbn: book.isbn,
+    category: book.category,
+    price: book.price,
+    pages: book.pages,
+    authorName: book.authorName,
+    yearOfRelease: book.yearOfRelease,
+    sinopsis: book.sinopsis
   }
 
   const [formData, setFormData] = useState(initialFormData)
-  const [message, setMessage] = useState('')
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -22,8 +21,7 @@ const BookForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    onSubmit(formData)
-    setFormData(initialFormData)
+    onSubmit(book._id, formData)
   }
 
   return (
@@ -156,9 +154,8 @@ const BookForm = ({ onSubmit }) => {
           </button>
         </div>
       </div>
-      {message && <h1 className='has-text-primary'>{message}</h1>}
     </form>
   )
 }
 
-export default BookForm
+export default BookUpdateForm

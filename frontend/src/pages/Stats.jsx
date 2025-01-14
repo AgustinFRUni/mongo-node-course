@@ -4,11 +4,11 @@ import { useEffect, useState } from "react"
 
 const Stats = () => {
   const [stats, setStats] = useState(null)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const fetchStats = async () => {
     try {
       const dataStats = await getStatsBooks()
-      console.log(dataStats)
       setStats(dataStats)
     } catch (error) {
       console.error(error)
@@ -18,6 +18,8 @@ const Stats = () => {
 
   useEffect(() => {
     fetchStats()
+    const token = localStorage.getItem("authToken");
+    setIsLoggedIn(!!token);
   }, [])
 
   return (
@@ -37,6 +39,9 @@ const Stats = () => {
               ))
             ) : <p>No data available</p>
           }
+          {!isLoggedIn && (
+            <p>User not logged in or session expired</p>
+          )}
         </div>
       </section>
     </Layout>

@@ -56,7 +56,7 @@ export const loginUser = async (req, res) => {
     if (user) {
       if (await bcrypt.compare(validatedData.password, user.password)) {
         const token = jwt.sign({ id: user._id, username: user.username }, JWT_SECRET_WORD, { expiresIn: '1h' })
-        res.json({ status: 'success', message: 'Usuario encontrado!', data: { user: { _id: user._id, username: user.username }, token } })
+        res.json({ status: 'success', message: 'Usuario encontrado!', data: { user: { _id: user._id, username: user.username } }, token })
       } else {
         res.json({ status: 'error', message: 'Usuario o contraseña incorrectos!', data: null })
       }

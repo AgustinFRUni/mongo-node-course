@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import BookCard from "../components/BookCard.jsx"
 import { getBooks, createBook, updateBook, deleteBook, getFilteredBooks, getStatsBooks } from "../services/apiBooks.js"
 import BookForm from "../components/BookForm.jsx"
-import ProductFilters from "../components/ProductFilters.jsx"
 
 const Books = () => {
   const [books, setBooks] = useState([])
@@ -38,6 +37,15 @@ const Books = () => {
     }
   }
 
+  const handleUpdate = async (id, bookData) => {
+    try {
+      await updateBook(id, bookData)
+      fetchBook()
+    } catch (error) {
+      console.log("Error updatin book:", error)
+    }
+  }
+
   const handleFilter = async (filteredBooks) => {
     try {
       const data = await getFilteredBooks(filteredBooks)
@@ -57,9 +65,6 @@ const Books = () => {
         <div className="container">
           <h1 className="title">Books</h1>
 
-          {/* Formulario para los query params */}
-          <ProductFilters onFilter={handleFilter} />
-
           <button className="button is-primary mb-5" onClick={() => {
             setShowForm(!showForm)
           }}>{showForm ? "Cancel" : "Add book"}</button>
@@ -74,8 +79,8 @@ const Books = () => {
             {
               books.map(book => {
                 return (
-                  <div className="column is-one-quarter" key={books._id}>
-                    <BookCard book={book} onDelete={handleDelete} />
+                  <div className="column is-one-quarter" key={book._id}>
+                    <BookCard book={book} onDelete={handleDelete} onUpdate={handleUpdate} />
                   </div>
                 )
               })
