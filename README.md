@@ -4,7 +4,7 @@
 ### Table of Contents
 #### Backend
 1. [Introduction](#introduction)
-2. [Technologies Used](#techs)
+2. [Technologies Used](#technologies-used)
 3. [Installation](#installation)
 4. [Project Structure](#project-structure)
 5. [API Endpoints](#api-endpoints)
@@ -14,11 +14,11 @@
 
 #### Frontend
 1. [Introduction - Front](#introduction-front)
-2. [Technologies Used - Front](#techs-front)
+2. [Technologies Used - Front](#technologies-used-front)
 3. [Usage](#usage)
 
 
-##
+##Backend
 ### Introduction
 
 This API provides functionalities to manage a library system. It includes endpoints for user authentication and book management, built using Node.js, Express, and MongoDB with Mongoose.
