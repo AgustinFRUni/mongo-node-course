@@ -206,12 +206,12 @@ Delete a book by its ID (requires user authentication).
 ```
 
 ## Frontend
-### Introduction
+### Introduction - Front
 
 This part of the project consumes de data given by the backend side presented above, is a regular system with CRUD operations and basic user session management like registering, loggin in and out. It also implements jsonwebtoken for the more sensible operations of the CRUD like creating, updating, deleting and consuming certain data.
 
 
-### Technologies used
+### Technologies used - Front
 - React
 - Bulma
 - Axios
