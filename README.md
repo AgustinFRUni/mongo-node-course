@@ -1,23 +1,30 @@
 # Mongo-node-course 
 # Biblioteca API 📖
 
-## Table of Contents
-
+### Table of Contents
+#### Backend
 1. [Introduction](#introduction)
 2. [Technologies Used](#techs)
-3. [Project Structure](#project-structure)
-4. [Installation](#installation)
+3. [Installation](#installation)
+4. [Project Structure](#project-structure)
 5. [API Endpoints](#api-endpoints)
    - [Authentication](#authentication)
    - [Using JSON Web Tokens](#using-json-web-tokens)
    - [Books](#books)
 
-## Introduction
+#### Frontend
+1. [Introduction](#introduction2)
+2. [Technologies Used - Foro](#techs2)
+3. [Usage](#usage)
+
+
+##
+### Introduction
 
 This API provides functionalities to manage a library system. It includes endpoints for user authentication and book management, built using Node.js, Express, and MongoDB with Mongoose.
 
 
-## Technologies used
+### Technologies used
 - NodeJs
 - Express
 - MongoDb
@@ -25,16 +32,27 @@ This API provides functionalities to manage a library system. It includes endpoi
 - JsonWebToken
 - Bcrypt
 
+### Installation
 
-## Project Structure
+To install the project, run:
+
+```
+git clone https://github.com/AgustinFRUni/node-js-course.git
+cd mongo-node-course
+cd backend
+npm install
+```
+
+### Project Structure
 ```
 root/
-└─src/
-  ├── config/
-  ├── controllers/
-  ├── models/
-  ├── routes/
-  └── validators/
+backend/
+  └─src/
+    ├── config/
+    ├── controllers/
+    ├── models/
+    ├── routes/
+    └── validators/
 ```
 
 The system follows a client-server architecture and utilizes a MongoDB database managed with Mongoose to handle data storage.
@@ -46,21 +64,11 @@ Additionally, a `./env` file is recommended with the following variables:
 - `JWT_SECRET_WORD` : The secret word used for JSON Web Token (JWT) authentication.
 - `CONNECTION_STRING` = The connection string for MongoDB.
 
-## Installation
+### Api Endpoints
 
-To install the project, run:
+#### Authentication
 
-```
-git clone https://github.com/AgustinFRUni/node-js-course.git
-cd mongo-node-course
-npm install
-```
-
-## Api Endpoints
-
-### Authentication
-
-#### POST /users/register
+##### POST /users/register
 
 Register a new user.
 
@@ -72,7 +80,7 @@ Register a new user.
   "password": "pass"
 }
 ```
-#### POST /users/login
+##### POST /users/login
 
 Authenticate a user and return a token.
 
@@ -84,32 +92,32 @@ Authenticate a user and return a token.
   "password": "pass"
 }
 ```
-### Using JSON Web Tokens
+#### Using JSON Web Tokens
 
 This API uses JSON Web Tokens (JWT) for authentication. To access protected routes, include a valid JWT in the Authorization header of your requests.
 
 
-### Example Header:
+#### Example Header:
 
 ```
 Authorization: Bearer your.jwt.token.here
 ```
 
-### Books
+#### Books
 
-#### GET /books/
+##### GET /books/
 
 Retrieve all books.
 
-#### GET /books/stats
+##### GET /books/stats
 
 Retrieve aggregated statistics for books, including average price, average pages, and book count by category (requires user authentication).
 
-#### GET /books/:id
+##### GET /books/:id
 
 Retrieve a book by its ID.
 
-#### POST /books/
+##### POST /books/
 
 Create a new book (requires user authentication).
 
@@ -127,15 +135,15 @@ Create a new book (requires user authentication).
   "sinopsis": String
 }
 ```
-#### PATCH /books/:id
+##### PATCH /books/:id
 
 Update an existing book (requires user authentication).
 
-#### DELETE /books/:id
+##### DELETE /books/:id
 
 Delete a book by its ID (requires user authentication).
 
-##### Example json for books
+###### Example json for books
 ```json
   {
   "title": "Cien años de soledad",
@@ -196,3 +204,26 @@ Delete a book by its ID (requires user authentication).
   "sinopsis": "Una colección de cuentos llenos de ingenio y profundidad."
 }
 ```
+
+## Frontend
+### Introduction
+
+This part of the project consumes de data given by the backend side presented above, is a regular system with CRUD operations and basic user session management like registering, loggin in and out. It also implements jsonwebtoken for the more sensible operations of the CRUD like creating, updating, deleting and consuming certain data.
+
+
+### Technologies used
+- React
+- Bulma
+- Axios
+
+### Usage
+
+To run the project:
+With the repository cloned:
+```
+cd mongo-node-course
+cd frontend
+npm install
+npn run dev
+```
+This will get the frontend running, is necessary to execute the backend part as well and configure the environment variables.
