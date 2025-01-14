@@ -13,8 +13,8 @@
    - [Books](#books)
 
 #### Frontend
-1. [Introduction](#introduction2)
-2. [Technologies Used - Foro](#techs2)
+1. [Introduction - Front](#introduction-front)
+2. [Technologies Used - Front](#techs-front)
 3. [Usage](#usage)
 
 
