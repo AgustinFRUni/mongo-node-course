@@ -6,15 +6,15 @@ export const router = Router()
 
 router.get('/', getAll)
 
-router.get('/stats', validateUser, getBookStats)
+router.get('/stats', getBookStats)
 
 router.get('/:id', getById)
 
-router.post('/', validateUser, createBook)
+router.post('/', createBook)
 
 router.patch('/:id', validateUser, updateBook)
 
-router.delete('/:id', validateUser, deleteBook)
+router.delete('/:id', deleteBook)
 
 function validateUser (req, res, next) {
   const token = req.headers?.authorization?.split(' ')[1]
